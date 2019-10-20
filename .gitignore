@@ -1,0 +1,8 @@
+# Folder
+__pycache__
+venv
+node_modules
+
+#Files
+*.pyc
+*.pyo
