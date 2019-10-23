@@ -5,19 +5,54 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "FLASK - DEBUG",
+            "name": "Flask [DEVELOPMENT]",
             "type": "python",
             "request": "launch",
+            "stopOnEntry": false,
             "module": "flask",
+            "cwd": "${workspaceRoot}",
             "env": {
-                "FLASK_APP": "app.py"
+                "FLASK_APP": "run.py",
+                "FLASK_ENV": "development",
+                "APP_SETTINGS": "config.cfg",
+                "FLASK_DEBUG": 1
             },
             "args": [
                 "run",
-                "--no-debugger",
-                "--no-reload"
+                "-p",
+                "8080"
             ],
-            "jinja": true
+            "envFile": "${workspaceRoot}/venv",
+            "debugOptions": [
+                "WaitOnAbnormalExit",
+                "WaitOnNormalExit",
+                "RedirectOutput"
+            ]
+        },
+        {
+            "name": "Flask [PRODUCTION]",
+            "type": "python",
+            "request": "launch",
+            "stopOnEntry": false,
+            //"pythonPath": "${config:python.pythonPath}",
+            "module": "flask",
+            "cwd": "${workspaceRoot}",
+            "env": {
+                "FLASK_APP": "app",
+                "FLASK_ENV": "production"
+            },
+            "args": [
+                "run",
+                "--reload",
+                "--port",
+                "8080"
+            ],
+            "envFile": "${workspaceRoot}/venv",
+            "debugOptions": [
+                "WaitOnAbnormalExit",
+                "WaitOnNormalExit",
+                "RedirectOutput"
+            ]
         }
     ]
 }
