@@ -1,12 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>UpMock - Simple Beautiful Mockups</title>
-</head>
-<body>
-    
-</body>
-</html>
+{% extends 'base.html' %}
+
+{% block title %}{{ title }}{% endblock %}
+
+{% block body_content %}
+
+<h1 class="bg-blue-500 text-gray-900 font-bold text-4xl">UpMock is a simple to use, mockup generator.</h1>
+<p class="bg-blue-200 text-gray-900 font-bold text-xl">It will automaticly take a screenshot of your website and generate a visual pleasing mockup for you!</p>
+
+{% endblock %}
