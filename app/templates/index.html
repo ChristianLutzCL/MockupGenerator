@@ -3,8 +3,50 @@
 {% block title %}{{ title }}{% endblock %}
 
 {% block body_content %}
+<script src="/static/js/three.js"></script>
+<script src="/static/js/require.js"></script>
+<script src="/static/js/GLTFLoader.js"></script>
+<script src="https://cdn.rawgit.com/mrdoob/three.js/master/examples/js/loaders/GLTFLoader.js"></script>
+<script src="https://cdn.rawgit.com/mrdoob/three.js/master/examples/js/loaders/DRACOLoader.js"></script>
 
 <h1 class="bg-blue-500 text-gray-900 font-bold text-4xl">UpMock is a simple to use, mockup generator.</h1>
-<p class="bg-blue-200 text-gray-900 font-bold text-xl">It will automaticly take a screenshot of your website and generate a visual pleasing mockup for you!</p>
+
+
+<script>
+    var scene = new THREE.Scene();
+			var camera = new THREE.PerspectiveCamera( 75, window.innerWidth/window.innerHeight, 0.1, 1000 );
+
+			var renderer = new THREE.WebGLRenderer();
+			renderer.setSize( window.innerWidth, window.innerHeight );
+			document.body.appendChild( renderer.domElement );
+
+			var geometry = new THREE.BoxGeometry();
+			var cubeMaterials =
+			[
+				new THREE.MeshBasicMaterial( { map: new THREE.TextureLoader( ).load('static/js/Component2.png'), side: THREE.DoubleSide }),
+				new THREE.MeshBasicMaterial( { map: new THREE.TextureLoader( ).load('static/js/Component2.png'), side: THREE.DoubleSide }),
+				new THREE.MeshBasicMaterial( { map: new THREE.TextureLoader( ).load('static/js/heheheh.jpg'), side: THREE.DoubleSide }),
+				new THREE.MeshBasicMaterial( { map: new THREE.TextureLoader( ).load('static/js/Component2.png'), side: THREE.DoubleSide }),
+				new THREE.MeshBasicMaterial( { map: new THREE.TextureLoader( ).load('static/js/Component2.png'), side: THREE.DoubleSide }),
+				new THREE.MeshBasicMaterial( { map: new THREE.TextureLoader( ).load('static/js/Component2.png'), side: THREE.DoubleSide }),
+			]
+			
+			var cube = new THREE.Mesh( geometry, cubeMaterials );
+			scene.add( cube );
+
+			camera.position.z = 5;
+
+			var animate = function () {
+				requestAnimationFrame( animate );
+
+				cube.rotation.x += 0.01;
+				cube.rotation.y += 0.01;
+
+				renderer.render( scene, camera );
+			};
+
+			animate();
+</script>
+
 
 {% endblock %}
