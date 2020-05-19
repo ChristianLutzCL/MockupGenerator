@@ -1,4 +1,4 @@
-<img src="upmock_gif.gif" alt="HTML5 Icon" width="820" height="240">
+<img src="upmock_gif.gif" alt="HTML5 Icon" width="1896" height="803">
 
 
 # MockupGenerator (UpMock.io, UpMock.one, UpMock.design)
