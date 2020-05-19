@@ -1,3 +1,6 @@
+<img src="upmock_gif.gif"\>
+
+
 # MockupGenerator (UpMock.io, UpMock.one, UpMock.design)
 UpMock is a web application for designers and developers who want to create nice looking 3D mockups for their websites, presentations or something else.
 
